@@ -34,6 +34,6 @@ filename=$1
         [Nn]*)
                 echo "File is not created"
             ;;
-        *) echo 'Invalid response "%s"\n' "$response"
+        *) echo "Invalid response: '$response'"
     esac
         fi
