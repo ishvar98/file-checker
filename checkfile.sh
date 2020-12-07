@@ -1,6 +1,18 @@
 #!/bin/bash
 #to use: checkfile.sh (filename.xx)
 
+
+        year=`date +%Y`
+        month=`date +%m`
+        day=`date +%d`
+
+        hour=`date +%H`
+        minute=`date +%M`
+        second=`date +%S`
+
+
+
+
 filename=$1
 
         if [ -f "$filename" ]; then
@@ -12,14 +24,16 @@ filename=$1
 
                 read response
                  case "$response" in
-        [Yy]*)
+         [Yy]*)
                 cmd="touch $filename"
                 eval $cmd
-                echo "File created successfully!"
+                echo "File '$filename' created successfully!"
+                echo "Date of file created : $day-$month-$year"
+                echo "Time of file created : $hour:$minute:$second"
             ;;
         [Nn]*)
                 echo "File is not created"
             ;;
-        *) printf 'Invalid response "%s"\n' "$response"
+        *) echo 'Invalid response "%s"\n' "$response"
     esac
         fi
