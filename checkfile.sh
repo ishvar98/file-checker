@@ -16,9 +16,9 @@
 filename=$1
 
         if [ -f "$filename" ]; then
-                echo "File exists"
+                echo "File exists in this directory"
         else 
-                echo "File does not exist"
+                echo "File does not exist in this directory"
 
                 echo "Do you want to to created a file named:" $filename "?"
 
